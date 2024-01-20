@@ -3,6 +3,17 @@
 <suite name="Failed suite [AllTestsSuite]" guice-stage="DEVELOPMENT" verbose="0">
   <test thread-count="5" name="My First Selenium TestNG Test(failed)" verbose="0">
     <classes>
+      <class name="LoginTest">
+        <methods>
+          <include name="wishListTest"/>
+          <include name="logOutTest"/>
+          <include name="searchTest"/>
+          <include name="addToCartTest"/>
+          <include name="setupTest"/>
+          <include name="userLoginTest"/>
+          <include name="teardownTest"/>
+        </methods>
+      </class> <!-- LoginTest -->
       <class name="RegistrationTest">
         <methods>
           <include name="teardownTest"/>

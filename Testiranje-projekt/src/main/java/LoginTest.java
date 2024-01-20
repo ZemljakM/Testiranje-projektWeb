@@ -17,7 +17,7 @@ public class LoginTest {
         driver.navigate().to(testURL);
     }
 
-    @Test(priority = 1)
+    @Test(priority = 1, dependsOnMethods = "RegistrationTest.userRegistrationTest")
     public void userLoginTest() throws InterruptedException {
 
         WebDriverWait wait = new WebDriverWait(driver, 10);
@@ -29,12 +29,12 @@ public class LoginTest {
         loginOption.click();
 
         WebElement emailField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("lookupEmail")));
-        emailField.sendKeys("testuser1@example.com");
+        emailField.sendKeys("testuser2@example.com");
         WebElement continueWithEmailButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"main-content\"]/div[1]/div/main/div/div/section/form/button")));
         continueWithEmailButton.click();
 
         WebElement passwordField = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("form[data-ref='signup'] input[data-test-id='password']")));
-        passwordField.sendKeys("TestPassword1!");
+        passwordField.sendKeys("TestPassword2!");
 
         WebElement loginButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"main-content\"]/div[1]/div/main/div/div/div/form/button")));
         loginButton.click();
@@ -110,7 +110,7 @@ public class LoginTest {
             }
         }
 
-        Thread.sleep(5000);
+        Thread.sleep(10000);
         WebElement dateIcon = wait.until(ExpectedConditions.elementToBeClickable(By.cssSelector("section[class='ba-dropdown ba-date-picker'] span[class='c-icon ba-date-picker__icon']")));
         dateIcon.click();
         Thread.sleep(2000);

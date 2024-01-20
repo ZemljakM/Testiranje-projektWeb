@@ -34,15 +34,15 @@ public class RegistrationTest {
         registerOption.click();
 
         WebElement emailField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("lookupEmail")));
-        emailField.sendKeys("testuser1@example.com");
+        emailField.sendKeys("testuser2@example.com");
         WebElement continueWithEmailButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"main-content\"]/div[1]/div/main/div/div/section/form/button")));
         continueWithEmailButton.click();
 
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         WebElement fullNameField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("full-name")));
-        fullNameField.sendKeys("Test User1");
+        fullNameField.sendKeys("Test User2");
         WebElement passwordField = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("new-password")));
-        passwordField.sendKeys("TestPassword1!");
+        passwordField.sendKeys("TestPassword2!");
 
         WebElement createAccountButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id=\"main-content\"]/div[1]/div/main/div/div/div/form/button")));
         createAccountButton.click();
